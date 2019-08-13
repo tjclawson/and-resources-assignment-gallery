@@ -18,7 +18,8 @@
 
             <ImageView
                     android:id="@+id/image_left"
-                    style="@style/Images">
+                    style="@style/Images"
+                    android:contentDescription="@string/stars_at_night">
 
             </ImageView>
         </LinearLayout>
@@ -29,7 +30,8 @@
 
             <ImageView
                     android:id="@+id/image_right"
-                    style="@style/Images">
+                    style="@style/Images"
+                    android:contentDescription="@string/stars_at_night">
 
             </ImageView>
         </LinearLayout>

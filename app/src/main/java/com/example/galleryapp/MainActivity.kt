@@ -1,6 +1,5 @@
 package com.example.galleryapp
 
-import android.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val views = Array<ImageView>(11){ image_left }
+        val views = Array<ImageView>(11){ ImageView(this) }
 
         views[0].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.abstract_abstract_expressionism_art_2505693))
         views[1].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.adventure_automobile_classic_2533092))
@@ -31,6 +30,18 @@ class MainActivity : AppCompatActivity() {
         views[9].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.clouds_coconut_trees_daylight_2486168))
         views[10].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.colorful_colourful_houses_2501965))
 
+        views[0].contentDescription = getString(R.string.abstractart)
+        views[1].contentDescription = getString(R.string.vwbus)
+        views[2].contentDescription = getString(R.string.ricepaddies)
+        views[3].contentDescription = getString(R.string.beach)
+        views[4].contentDescription = getString(R.string.alley)
+        views[5].contentDescription = getString(R.string.buildings)
+        views[6].contentDescription = getString(R.string.fireworks)
+        views[7].contentDescription = getString(R.string.flower)
+        views[8].contentDescription = getString(R.string.shoes)
+        views[9].contentDescription = getString(R.string.coconut)
+        views[10].contentDescription = getString(R.string.houses)
+
 
         val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
@@ -38,14 +49,10 @@ class MainActivity : AppCompatActivity() {
             imageView.layoutParams = layoutParams
             imageView.adjustViewBounds = true
             imageView.setPadding(15, 15, 15, 15)
-            if(index >= 5){
+            if(index > 5){
                 right_column.addView(imageView)
             } else {left_column.addView(imageView)}
         }
-
-
-
-
 
 
     }
